@@ -1,0 +1,81 @@
+<div>
+  <div>
+    <mat-toolbar>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+
+  <form [formGroup]="appForm">
+    <mat-card>
+      <mat-card-content>
+        <mat-form-field class="mat-50">
+          <mat-label>Enter First Number : </mat-label>
+          <input matInput formControlName="num1" />
+        </mat-form-field>
+        <mat-form-field class="mat-50">
+          <mat-label>Enter Second Number : </mat-label>
+          <input matInput formControlName="num2" />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-footer>
+        <div style="margin: 2%; text-align: right">
+          <button mat-mini-fab color="primary" type="submit" (click)="add()">
+            +
+          </button>
+          <button
+            mat-mini-fab
+            color="primary"
+            type="submit"
+            (click)="subtract()"
+          >
+            -
+          </button>
+          <button
+            mat-mini-fab
+            color="primary"
+            type="submit"
+            (click)="multiply()"
+          >
+            *
+          </button>
+          <button
+            mat-mini-fab
+            color="primary"
+            type="submit"
+            name="submit"
+            (click)="divide()"
+          >
+            /
+          </button>
+          <button mat-raised-button color="primary" type="reset">Reset</button>
+        </div>
+        <mat-form-field class="mat-50">
+          <mat-label>Result : </mat-label>
+          <input matInput formControlName="num3" />
+        </mat-form-field>
+      </mat-card-footer>
+    </mat-card>
+  </form>
+</div>
